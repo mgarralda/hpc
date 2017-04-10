@@ -3,6 +3,7 @@
 int main( int argc, const char* argv[] )
 {
 	int* x,*y,*z;
+	int i;
         float* t,*w;
         FILE *test_file;
         test_file=fopen(argv[1],"r");
@@ -12,7 +13,7 @@ int main( int argc, const char* argv[] )
            z=(int*)malloc(15*sizeof(int));
            t=(float*)malloc(15*sizeof(float));
            w=(float*)malloc(15*sizeof(float));
-        for (int i =0;i<15;i++)
+        for (i =0;i<15;i++)
 
              fscanf(test_file,"%d:%d:%d:%f:%f\n",&x[i],&y[i],&z[i],&t[i],&w[i]);
    
@@ -26,12 +27,12 @@ int main( int argc, const char* argv[] )
            z2=(int*)malloc(15*sizeof(int));
            t2=(float*)malloc(15*sizeof(float));
            w2=(float*)malloc(15*sizeof(float));
-        for (int i =0;i<15;i++)
+        for (i =0;i<15;i++)
 
              fscanf(test_file2,"%d:%d:%d:%f:%f\n",&x2[i],&y2[i],&z2[i],&t2[i],&w2[i]);
         
 
-        for (int i =0;i<15;i++){
+        for (i=0;i<15;i++){
              int correct=0;
              if (x[i]==x2[i] && y[i]==y2[i] && z[i]==z2[i]){
                 printf("\n OK test_%d_%d --> \t",y[i],x[i]);
