@@ -19,7 +19,7 @@
 #$ -m e
 
 ##email addrees notification
-#$ -M ujape@yahoo.es
+#$ -M mail@mail.es
 
 ##Passes an environment variable to the job
 #$ -v  OMP_NUM_THREADS=4
