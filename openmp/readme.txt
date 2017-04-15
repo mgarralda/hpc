@@ -1,3 +1,9 @@
+knapsack_dyn_serial.c:
+The initial program given.
+
+knapsack_dyn_parallel.c:
+The parallelizable program with the pragma sentences.
+
 run_all_pc.sh:
 A bash program which only can be executed in our own PCs. It compiles the serial and the parallel programs and compares the outputs by calling another program (checkOutputs.c program) which compares the both outputs.
 
@@ -9,9 +15,3 @@ The sh file to be launched by qsub command. It has a modification in the executi
 
 check_outputs.c:
 C program that compares two files; the output of the serial program and the output of parallel program. It presents a description of the results by showing if there are differences between them. First print if the results are the same or not and the improvement time.
-
-knapsack_DYN_serial.c:
-The initial program
-
-knapsack_DYN_PARAL.c:
-The parallelizable program with the pragma sentences
