@@ -24,7 +24,7 @@ do ./parallel $i >> outParallel.txt ;
 done
 
 # we compile the checkOutputs program
-gcc checkOutputs.c -o check
+gcc check_outputs.c -o check
 
 #we execute the checkOutputs program 
 ./check outSerial.txt  outParallel.txt
