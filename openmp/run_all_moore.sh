@@ -31,7 +31,7 @@ sleep 40s
 echo "waiting for the results... Please wait!!"
 
 # we compile and execute the program which checks the both outputs
-gcc checkOutputs.c -o check
+gcc check_outputs.c -o check
 ./check outSerial.txt  $pattern2
 
 
