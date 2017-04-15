@@ -12,8 +12,8 @@ rm $pattern1
 
 
 # we compile the serial and parallel (with pragmas) programs
-gcc  knapsack_dym_serial.c -o serial
-gcc -fopenmp knapsack_dym_parallel.c -o parallel
+gcc  knapsack_dyn_serial.c -o serial
+gcc -fopenmp knapsack_dyn_parallel.c -o parallel
 
 
 # we execute the serial programs with the available tests
