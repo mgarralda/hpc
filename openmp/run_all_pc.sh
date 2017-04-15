@@ -5,8 +5,8 @@ rm outSerial.txt
 rm outParallel.txt
 
 # we compile the both programs
-gcc  knapsackDYN_serial.c -o serial
-gcc -fopenmp knapsackDYN_PARAL.c -o parallel
+gcc  knapsack_dyn_serial.c -o serial
+gcc -fopenmp knapsack_dyn_parallel.c -o parallel
 
 #we execute the serial program for all testbed files
 for i in testbed/t*; 
