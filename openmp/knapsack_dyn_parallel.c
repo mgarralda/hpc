@@ -24,6 +24,7 @@ for (i=0;i<=N;i++)
 // Build table K[][] in bottom up manner
 
 #pragma omp parallel private(i,w)
+{
 for (i = 0; i <= N; i++)
 {
 
@@ -37,6 +38,7 @@ for (i = 0; i <= N; i++)
 		else
 				K[i][w] = K[i-1][w];
 	}
+}
 }
 
 //    for (i = 0; i <= n; i++)
