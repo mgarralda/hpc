@@ -13,7 +13,7 @@
 #$ -pe mpich 32
 
 ## The  name  of  the  job.
-#$ -N out_32_mariano
+#$ -N outParallel
 
 ## Send an email at the start and the end of the job.
 #$ -m be
