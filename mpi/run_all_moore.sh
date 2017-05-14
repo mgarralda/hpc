@@ -6,7 +6,7 @@ rm outParallel.txt
 
 # we compile the both programs
 gcc  knapsack_dyn_serial.c -o serial
-mpicc $1 -o parallel
+mpicc $1 -o parallelMPI2
 
 
 
