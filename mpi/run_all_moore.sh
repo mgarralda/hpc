@@ -1,32 +1,35 @@
-#!/bin/bash
+!/bin/bash
 
-#we remove the older files
+# we store in a variable the all the outputs of qsub operation in order to be removed
+pattern1='outParallel*'
+
+# we store in a variable only the output file in order to be executed below.
+pattern2='outParallel.o*'
+
+# we clean older files
 rm outSerial.txt
-rm outParallel.txt
+rm $pattern1
 
-# we compile the both programs
+
+# we compile the serial and parallel (with pragmas) programs
 gcc  knapsack_dyn_serial.c -o serial
-mpicc $1 -o parallelMPI2
+mpicc knapsack_dyn_parallel_v2.c -o parallelMPI2
 
 
-
-#we execute the serial program for all testbed files
+# we execute the serial programs with the available tests
 for i in testbed/t*; 
 
 do ./serial $i >> outSerial.txt ;
 
 done
 
+# we execute the program into moore cluster
+qsub run-extended.sh
 
-# we execute the parallel program for all the testbed files
-qsub run_extended.sh
-
-# sleep for a while waiting for qsub finishes
 sleep 1000s
-# we compile the checkOutputs program
+
+echo "waiting for the results... Please wait!!"
+
+# we compile and execute the program which checks the both outputs
 gcc check_outputs.c -o check
-
-#we execute the checkOutputs program 
-./check outSerial.txt  outParallel.txt
-
-
+./check outSerial.txt  $pattern2
